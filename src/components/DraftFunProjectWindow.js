@@ -598,8 +598,8 @@ export default function DraftFunProjectWindow({
 
             {/* APK DOWNLOAD */}
             <a
-              href="/downloads/DraftFun-v1.0.apk"
-              download="DraftFun-v1.0.apk"
+              href="https://github.com/ramsantosk/portfolio/releases/download/v1.0.0/DraftFun-v1.0.apk"
+              
               className={`rounded-lg px-5 py-3 font-mono text-sm font-semibold text-white transition hover:-translate-y-0.5 ${
                 isDark
                   ? "bg-green-600 hover:bg-green-500"
