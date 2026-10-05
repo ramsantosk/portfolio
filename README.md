@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ram Kirsten Santos — Developer Portfolio
 
-## Getting Started
+My personal developer portfolio built as an interactive desktop-inspired experience.
 
-First, run the development server:
+The portfolio showcases my web, software, and mobile development projects, technical background, resume, contact information, and selected development work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Live Portfolio
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Website:**  
+https://ramkirstensantos.vercel.app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## About the Portfolio
 
-## Learn More
+Instead of using a traditional scrolling portfolio layout, I designed the site around a **Developer OS / desktop interface**.
 
-To learn more about Next.js, take a look at the following resources:
+Visitors can open different sections as application-style windows, including:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Home
+- About
+- Projects
+- Resume
+- Contact
+- Terminal
+- Settings
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The interface also supports responsive layouts for desktop, tablet, and mobile devices.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Featured Projects
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Filipino Sign Language Translation System
+
+An academic research project focused on translating basic Filipino Sign Language gestures into text and speech.
+
+**Role:** Lead Software Developer
+
+Technologies used include:
+
+- Python
+- MediaPipe
+- TensorFlow Lite
+- Computer Vision
+- Raspberry Pi
+
+---
+
+### Smart Web-Based Healthcare Management System
+
+A web-based healthcare management platform developed for Barangay Ilaya Alabang.
+
+Key areas include:
+
+- Patient management
+- Consultation requests
+- QR-based patient identification
+- Reports and administrative tools
+- Responsive web interfaces
+
+**Technologies:**
+
+- PHP
+- MySQL
+- JavaScript
+- AJAX
+- HTML
+- CSS
+
+---
+
+### Micro-Lesson Generator
+
+A paid freelance web development project created as a university thesis system.
+
+The platform includes:
+
+- Student and instructor accounts
+- Course management
+- Micro-lessons
+- Lesson progression
+- Quizzes and assessments
+- Student progress tracking
+
+**Technologies:**
+
+- PHP
+- MySQL
+- PDO
+- JavaScript
+- AJAX
+- HTML
+- CSS
+
+---
+
+### DraftFun
+
+A paid freelance Android learning application developed using Flutter.
+
+DraftFun uses interactive lessons and game-based activities to support students learning technical drawing concepts.
+
+Features include:
+
+- User authentication
+- Four learning chapters
+- Interactive activities
+- Results and progress flow
+- Leaderboard
+- Audio and narration controls
+- Persistent settings
+- Responsive Android layouts
+
+**Technologies:**
+
+- Flutter
+- Dart
+- Firebase Authentication
+- Cloud Firestore
+- Shared Preferences
+- Audioplayers
+- Material 3
+
+The Android APK is distributed through GitHub Releases.
+
+---
+
+## Portfolio Features
+
+- Desktop-inspired user interface
+- Application-style windows
+- Window minimize, maximize, and close controls
+- Responsive mobile and tablet layouts
+- Light and dark themes
+- Desktop background customization
+- Persistent user preferences
+- Simulated developer terminal
+- Resume viewer
+- Contact form
+- GitHub-hosted APK download
+- Open Graph social preview
+- Twitter/X social preview
+- Custom portfolio favicon
+
+---
+
+## Tech Stack
+
+### Front End
+
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- Motion
+
+### Backend / Services
+
+- Next.js API Routes
+- Resend
+
+### Deployment
+
+- Vercel
+- GitHub
+
+---
+
+## Contact Form
+
+The portfolio includes a working contact form using a Next.js API route and Resend.
+
+For local development, create a `.env.local` file:
+
+```env
+RESEND_API_KEY=your_resend_api_key
