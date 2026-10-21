@@ -6,8 +6,9 @@ const projects = [
     id: "01",
     title: "Basic Filipino Sign Language Translation System",
     type: "AI / Embedded System",
+    role: "Lead Software Developer",
     description:
-      "A real-time system that recognizes basic Filipino Sign Language gestures and converts them into text and speech.",
+      "A research prototype that recognizes basic Filipino Sign Language gestures and translates them into text and speech in real time.",
     technologies: ["Raspberry Pi", "Python", "MediaPipe", "TensorFlow Lite"],
     image: "/projects/fsl.png",
   },
@@ -15,8 +16,9 @@ const projects = [
     id: "02",
     title: "Smart Web-Based Healthcare Management System",
     type: "Web System",
+    role: "Freelance Full-Stack Web Developer",
     description:
-      "A healthcare management system developed for Barangay Ilaya Alabang with patient registration, consultation management, QR functionality, reports, and administrative tools.",
+      "A web-based system developed for Barangay Ilaya Alabang to manage patient records, handle consultation requests, support QR-based patient identification, and generate administrative reports.",
     technologies: ["PHP", "MySQL", "JavaScript", "CSS"],
     image: "/projects/healthcare.png",
   },
@@ -24,8 +26,9 @@ const projects = [
     id: "03",
     title: "Micro-Lesson Generator",
     type: "E-Learning Platform",
+    role: "Freelance Full-Stack Web Developer",
     description:
-      "An e-learning platform with lesson management, quizzes, student progress tracking, and adaptive micro-learning features.",
+      "A web-based learning platform developed for a university thesis project, featuring course enrollment, micro-lessons, quizzes, and student progress tracking.",
     technologies: ["PHP", "MySQL", "JavaScript", "AJAX"],
     image: "/projects/microlesson.png",
   },
@@ -33,8 +36,9 @@ const projects = [
     id: "04",
     title: "DraftFun",
     type: "Mobile Application",
+    role: "Freelance Mobile Developer",
     description:
-      "An interactive game-based learning application designed to improve students' visualization skills in technical drawing.",
+      "A Flutter-based Android learning application featuring technical drawing lessons, interactive activities, and audio-guided content to help students develop visualization skills.",
     technologies: ["Flutter", "Dart", "Firebase"],
     image: "/projects/draftfun.png",
   },
@@ -171,6 +175,15 @@ export default function ProjectsWindow({
               >
                 {project.title}
               </h3>
+
+              {/* DEVELOPMENT ROLE */}
+<p
+  className={`mt-2 font-mono text-xs font-medium ${
+    isDark ? "text-green-400" : "text-green-800"
+  }`}
+>
+  {project.role}
+</p>
 
               <p
                 className={`mt-3 flex-1 text-sm leading-6 ${
