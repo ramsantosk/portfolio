@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import AppWindow from "./AppWindow";
 
@@ -10,6 +14,8 @@ export default function DraftFunProjectWindow({
   theme = "light",
 }) {
   const isDark = theme === "dark";
+
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   return (
     <AppWindow
@@ -572,29 +578,36 @@ export default function DraftFunProjectWindow({
           </p>
 
           <div className="mt-4 flex flex-wrap gap-3">
-            {/* VIDEO DEMO - CONNECT LATER */}
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-green-400/20 bg-green-400/10 text-green-300"
-                  : "border-green-800/20 bg-green-50 text-green-900"
-              }`}
-            >
-              Watch App Demo ▶
-            </button>
+           
+{/* DRAFTFUN VIDEO DEMO */}
+<button
+  type="button"
+  onClick={() => setIsVideoOpen(true)}
+  className={`cursor-pointer rounded-lg border px-5 py-3 font-mono text-sm transition hover:opacity-80 ${
+    isDark
+      ? "border-green-400/20 bg-green-400/10 text-green-300"
+      : "border-green-800/20 bg-green-50 text-green-900"
+  }`}
+>
+  Watch App Demo ▶
+</button>
 
-            {/* GITHUB - CONNECT LATER */}
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-white/10 bg-[#1b241e] text-zinc-300"
-                  : "border-black/15 bg-white text-zinc-600"
-              }`}
-            >
-              View Source Code ↗
-            </button>
+
+            
+{/* GITHUB REPOSITORY */}
+<a
+  href="https://github.com/ramsantosk/DraftFun-Mobile-App"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`inline-flex items-center rounded-lg border px-5 py-3 font-mono text-sm transition hover:opacity-80 ${
+    isDark
+      ? "border-white/10 bg-[#1b241e] text-zinc-300"
+      : "border-black/15 bg-white text-zinc-600"
+  }`}
+>
+  View on GitHub ↗
+</a>
+
 
             {/* APK DOWNLOAD */}
             <a
@@ -617,12 +630,91 @@ export default function DraftFunProjectWindow({
           >
             <p>Android APK available for direct download.</p>
 
-            <p>
-              Video demonstration and source code links will be added separately.
-            </p>
+           <p>
+  Watch the DraftFun application demonstration, explore selected
+  Flutter source code on GitHub, or download the Android APK.
+</p>
           </div>
+
         </section>
       </div>
+
+      {/* DRAFTFUN VIDEO DEMONSTRATION */}
+      {isVideoOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/75 p-3 sm:p-6">
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label="DraftFun application demonstration"
+              className={`max-h-[calc(100dvh-24px)] w-full max-w-5xl overflow-y-auto rounded-xl border shadow-2xl ${
+                isDark
+                  ? "border-green-400/20 bg-[#151c17] text-[#f3f4ee]"
+                  : "border-green-800/15 bg-[#fbfbf8] text-[#172019]"
+              }`}
+            >
+              {/* VIDEO WINDOW HEADER */}
+              <div
+                className={`flex items-center justify-between gap-4 border-b px-4 py-3 ${
+                  isDark ? "border-white/10" : "border-black/10"
+                }`}
+              >
+                <div className="min-w-0">
+                  <p className="font-mono text-xs font-semibold sm:text-sm">
+                    draftfun-demo.exe
+                  </p>
+
+                  <p
+                    className={`mt-1 truncate font-mono text-[10px] sm:text-xs ${
+                      isDark ? "text-zinc-400" : "text-zinc-500"
+                    }`}
+                  >
+                    DraftFun — Application Demonstration
+                  </p>
+                </div>
+
+                <div className="flex shrink-0 items-center gap-2">
+                  <a
+                    href="https://drive.google.com/file/d/1v4PzgiE-Sn3XOKyNrdDzA-PHHeOUM-ad/view"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`rounded-md border px-3 py-2 font-mono text-xs transition hover:opacity-70 ${
+                      isDark
+                        ? "border-white/15 text-zinc-300"
+                        : "border-black/15 text-zinc-600"
+                    }`}
+                  >
+                    Open in Drive ↗
+                  </a>
+
+                  <button
+                    type="button"
+                    onClick={() => setIsVideoOpen(false)}
+                    aria-label="Close DraftFun video demonstration"
+                    className={`rounded-md border px-3 py-2 font-mono text-sm transition hover:opacity-70 ${
+                      isDark
+                        ? "border-white/15 text-zinc-300"
+                        : "border-black/15 text-zinc-600"
+                    }`}
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+
+              {/* GOOGLE DRIVE VIDEO PLAYER */}
+              <iframe
+                src="https://drive.google.com/file/d/1v4PzgiE-Sn3XOKyNrdDzA-PHHeOUM-ad/preview"
+                title="DraftFun Mobile Application Demonstration"
+                className="block aspect-video w-full bg-black"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </div>,
+          document.body
+        )}
+
     </AppWindow>
   );
 }
