@@ -9,12 +9,12 @@ export default function ResumeWindow({
 }) {
   const isDark = theme === "dark";
 
-  const resumePath = "/resume/Ram-Kirsten-Santos-Resume.pdf";
+  const resumePath = "/resume/Ram-Kirsten-B-Santos-Resume.pdf";
 
   return (
     <AppWindow
       title="resume.pdf"
-      path="/resume/Ram-Kirsten-Santos-Resume.pdf"
+      path={resumePath}
       onClose={onClose}
       onMinimize={onMinimize}
       isMaximized={isMaximized}
@@ -77,7 +77,7 @@ export default function ResumeWindow({
 
             <a
               href={resumePath}
-              download="Ram-Kirsten-Santos-Resume.pdf"
+              download="Ram-Kirsten-B-Santos-Resume.pdf"
               className={`rounded-lg px-4 py-2 font-mono text-xs font-semibold text-white transition ${
                 isDark
                   ? "bg-green-600 hover:bg-green-500"
