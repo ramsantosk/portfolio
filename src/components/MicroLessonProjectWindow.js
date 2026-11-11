@@ -345,8 +345,8 @@ export default function MicroLessonProjectWindow({
               ["01", "Enroll in Course"],
               ["02", "Start Lesson"],
               ["03", "Complete Lesson"],
-              ["04", "Unlock Next Content"],
-              ["05", "Take Quiz"],
+              ["04", "Take Quiz"],
+              ["05", "Unlock Next Lesson"],
               ["06", "Track Progress"],
             ].map(([number, title], index) => (
               <div
@@ -669,37 +669,67 @@ export default function MicroLessonProjectWindow({
             &gt; project_links
           </p>
 
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-green-400/20 bg-green-400/10 text-green-300"
-                  : "border-green-800/20 bg-green-50 text-green-900"
-              }`}
-            >
-              Live Demo ↗
-            </button>
+         
+<div className="mt-4 flex flex-wrap gap-3">
+  {/* LIVE DEMO */}
+  <a
+    href="https://mlg-live-demo.vercel.app/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`inline-flex items-center rounded-lg border px-5 py-3 font-mono text-sm transition-colors ${
+      isDark
+        ? "border-green-400/30 bg-green-400/10 text-green-300 hover:bg-green-400/20"
+        : "border-green-800/30 bg-green-50 text-green-900 hover:bg-green-100"
+    }`}
+  >
+    Live Demo ↗
+  </a>
 
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-white/10 bg-[#1b241e] text-zinc-300"
-                  : "border-black/15 bg-white text-zinc-600"
-              }`}
-            >
-              View Source Code ↗
-            </button>
-          </div>
+  {/* SOURCE CODE */}
+  <button
+    disabled
+    className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
+      isDark
+        ? "border-white/10 bg-[#1b241e] text-zinc-300"
+        : "border-black/15 bg-white text-zinc-600"
+    }`}
+  >
+    View Source Code ↗
+  </button>
+</div>
 
-          <p
-            className={`mt-3 font-mono text-[11px] ${
-              isDark ? "text-zinc-500" : "text-zinc-400"
-            }`}
-          >
-            Links will be added once the live project and repository are ready.
-          </p>
+
+         
+<div
+  className={`mt-5 max-w-4xl border-l-2 py-1 pl-4 ${
+    isDark
+      ? "border-green-400/40"
+      : "border-green-800/30"
+  }`}
+>
+  <p
+    className={`font-mono text-xs font-semibold ${
+      isDark ? "text-green-400" : "text-green-800"
+    }`}
+  >
+    &gt; about_the_demo
+  </p>
+
+  <p
+    className={`mt-2 text-sm leading-6 ${
+      isDark ? "text-zinc-300" : "text-zinc-600"
+    }`}
+  >
+    This live demo is a simplified portfolio version of
+    the original Micro-Lesson Generator platform.
+    It showcases selected student and instructor
+    features, but does not represent the complete
+    production system. Some functionality is limited
+    or unavailable, and demo data is stored locally
+    in your browser rather than in a live database.
+  </p>
+</div>
+
         </section>
       </div>
     </AppWindow>
