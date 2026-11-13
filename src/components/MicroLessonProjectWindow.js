@@ -685,17 +685,19 @@ export default function MicroLessonProjectWindow({
     Live Demo ↗
   </a>
 
-  {/* SOURCE CODE */}
-  <button
-    disabled
-    className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-      isDark
-        ? "border-white/10 bg-[#1b241e] text-zinc-300"
-        : "border-black/15 bg-white text-zinc-600"
-    }`}
-  >
-    View Source Code ↗
-  </button>
+{/* SOURCE CODE */}
+<a
+  href="https://github.com/ramsantosk/MLG-Live-Demo-Public"
+  target="_blank"
+  rel="noopener noreferrer"
+  className={`inline-flex items-center rounded-lg border px-5 py-3 font-mono text-sm transition-colors ${
+    isDark
+      ? "border-white/20 bg-[#1b241e] text-zinc-200 hover:bg-white/10"
+      : "border-black/15 bg-white text-zinc-700 hover:bg-zinc-100"
+  }`}
+>
+  View Source Code ↗
+</a>
 </div>
 
 

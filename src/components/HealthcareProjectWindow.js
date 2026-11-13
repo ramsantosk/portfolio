@@ -484,52 +484,93 @@ export default function HealthcareProjectWindow({
           </section>
         </div>
 
-        {/* PROJECT LINKS */}
-        <section
-          className={`mt-10 border-t pt-6 ${
-            isDark ? "border-white/10" : "border-black/10"
-          }`}
-        >
-          <p
-            className={`font-mono text-sm font-semibold ${
-              isDark ? "text-green-400" : "text-green-800"
-            }`}
-          >
-            &gt; project_links
-          </p>
+        
+{/* PROJECT LINKS */}
+<section
+  className={`mt-10 border-t pt-6 ${
+    isDark ? "border-white/10" : "border-black/10"
+  }`}
+>
+  <p
+    className={`font-mono text-sm font-semibold ${
+      isDark ? "text-green-400" : "text-green-800"
+    }`}
+  >
+    &gt; project_links
+  </p>
 
-          <div className="mt-4 flex flex-wrap gap-3">
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-green-400/20 bg-green-400/10 text-green-300"
-                  : "border-green-800/20 bg-green-50 text-green-900"
-              }`}
-            >
-              Live Demo ↗
-            </button>
+  <div className="mt-4 flex flex-wrap gap-3">
+    {/* LIVE DEMO */}
+    <a
+      href="https://ilaya-healthcare-live-demo.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center rounded-lg border px-5 py-3 font-mono text-sm transition-colors ${
+        isDark
+          ? "border-green-400/30 bg-green-400/10 text-green-300 hover:bg-green-400/20"
+          : "border-green-800/30 bg-green-50 text-green-900 hover:bg-green-100"
+      }`}
+    >
+      Live Demo ↗
+    </a>
 
-            <button
-              disabled
-              className={`cursor-not-allowed rounded-lg border px-5 py-3 font-mono text-sm opacity-60 ${
-                isDark
-                  ? "border-white/10 bg-[#1b241e] text-zinc-300"
-                  : "border-black/15 bg-white text-zinc-600"
-              }`}
-            >
-              View Source Code ↗
-            </button>
-          </div>
+    {/* SOURCE CODE */}
+    <a
+      href="https://github.com/ramsantosk/Ilaya-Healthcare-Live-Demo-Public"
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center rounded-lg border px-5 py-3 font-mono text-sm transition-colors ${
+        isDark
+          ? "border-white/20 bg-[#1b241e] text-zinc-200 hover:bg-white/10"
+          : "border-black/15 bg-white text-zinc-700 hover:bg-zinc-100"
+      }`}
+    >
+      View Source Code ↗
+    </a>
+  </div>
 
-          <p
-            className={`mt-3 font-mono text-[11px] ${
-              isDark ? "text-zinc-500" : "text-zinc-400"
-            }`}
-          >
-            Links will be added once the live project and repository are ready.
-          </p>
-        </section>
+  {/* ABOUT THE DEMO */}
+  <div
+    className={`mt-5 max-w-4xl border-l-2 py-1 pl-4 ${
+      isDark
+        ? "border-green-400/40"
+        : "border-green-800/30"
+    }`}
+  >
+    <p
+      className={`font-mono text-xs font-semibold ${
+        isDark ? "text-green-400" : "text-green-800"
+      }`}
+    >
+      &gt; about_the_demo
+    </p>
+
+    <p
+      className={`mt-2 text-sm leading-6 ${
+        isDark ? "text-zinc-300" : "text-zinc-600"
+      }`}
+    >
+      This live demo is a simplified portfolio recreation of
+      the original Smart Web-Based Healthcare Management System.
+      It showcases selected patient, healthcare staff, and
+      administrative workflows using fictional records.
+      The demo does not connect to the original production
+      database, and changes are stored locally in your browser.
+      It is not intended for actual healthcare operations.
+    </p>
+
+    <p
+      className={`mt-3 text-sm leading-6 ${
+        isDark ? "text-zinc-300" : "text-zinc-600"
+      }`}
+    >
+      The public GitHub repository contains selected source
+      code samples only. The original production source code
+      and client-specific configurations remain private.
+    </p>
+  </div>
+</section>
+
       </div>
     </AppWindow>
   );
